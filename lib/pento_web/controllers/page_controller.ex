@@ -1,5 +1,5 @@
-defmodule Pento2Web.PageController do
-  use Pento2Web, :controller
+defmodule PentoWeb.PageController do
+  use PentoWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

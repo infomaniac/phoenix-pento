@@ -1,4 +1,4 @@
-# Pento2
+# Pento
 
 To start your Phoenix server:
 

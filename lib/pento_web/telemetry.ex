@@ -1,4 +1,4 @@
-defmodule Pento2Web.Telemetry do
+defmodule PentoWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -52,23 +52,23 @@ defmodule Pento2Web.Telemetry do
       ),
 
       # Database Metrics
-      summary("pento2.repo.query.total_time",
+      summary("pento.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("pento2.repo.query.decode_time",
+      summary("pento.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("pento2.repo.query.query_time",
+      summary("pento.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("pento2.repo.query.queue_time",
+      summary("pento.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("pento2.repo.query.idle_time",
+      summary("pento.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -86,7 +86,7 @@ defmodule Pento2Web.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {Pento2Web, :count_users, []}
+      # {PentoWeb, :count_users, []}
     ]
   end
 end

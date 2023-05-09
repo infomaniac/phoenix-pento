@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :pento2, Pento2.Repo,
+config :pento, Pento.Repo,
   username: "postgres",
   password: "einfach",
   hostname: "localhost",
-  database: "pento2_dev",
+  database: "pento_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :pento2, Pento2.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :pento2, Pento2Web.Endpoint,
+config :pento, PentoWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -53,17 +53,17 @@ config :pento2, Pento2Web.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :pento2, Pento2Web.Endpoint,
+config :pento, PentoWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/pento2_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/pento_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :pento2, dev_routes: true
+config :pento, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

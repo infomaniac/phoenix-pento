@@ -1,5 +1,5 @@
-defmodule Pento2.Repo do
+defmodule Pento.Repo do
   use Ecto.Repo,
-    otp_app: :pento2,
+    otp_app: :pento,
     adapter: Ecto.Adapters.Postgres
 end

@@ -7,17 +7,17 @@
 # General application configuration
 import Config
 
-config :pento2,
-  ecto_repos: [Pento2.Repo]
+config :pento,
+  ecto_repos: [Pento.Repo]
 
 # Configures the endpoint
-config :pento2, Pento2Web.Endpoint,
+config :pento, PentoWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    formats: [html: Pento2Web.ErrorHTML, json: Pento2Web.ErrorJSON],
+    formats: [html: PentoWeb.ErrorHTML, json: PentoWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Pento2.PubSub,
+  pubsub_server: Pento.PubSub,
   live_view: [signing_salt: "ilETEpS1"]
 
 # Configures the mailer
@@ -27,7 +27,7 @@ config :pento2, Pento2Web.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :pento2, Pento2.Mailer, adapter: Swoosh.Adapters.Local
+config :pento, Pento.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,

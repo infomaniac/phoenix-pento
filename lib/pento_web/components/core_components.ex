@@ -1,4 +1,4 @@
-defmodule Pento2Web.CoreComponents do
+defmodule PentoWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -11,7 +11,7 @@ defmodule Pento2Web.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import Pento2Web.Gettext
+  import PentoWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -674,9 +674,9 @@ defmodule Pento2Web.CoreComponents do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(Pento2Web.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(PentoWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Pento2Web.Gettext, "errors", msg, opts)
+      Gettext.dgettext(PentoWeb.Gettext, "errors", msg, opts)
     end
   end
 

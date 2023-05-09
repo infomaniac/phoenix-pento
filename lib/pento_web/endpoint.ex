@@ -1,12 +1,12 @@
-defmodule Pento2Web.Endpoint do
-  use Phoenix.Endpoint, otp_app: :pento2
+defmodule PentoWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :pento
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_pento2_key",
+    key: "_pento_key",
     signing_salt: "13HynzlS",
     same_site: "Lax"
   ]
@@ -19,9 +19,9 @@ defmodule Pento2Web.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :pento2,
+    from: :pento,
     gzip: false,
-    only: Pento2Web.static_paths()
+    only: PentoWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -29,7 +29,7 @@ defmodule Pento2Web.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :pento2
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :pento
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -47,5 +47,5 @@ defmodule Pento2Web.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug Pento2Web.Router
+  plug PentoWeb.Router
 end

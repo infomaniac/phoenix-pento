@@ -1,9 +1,9 @@
-defmodule Pento2.MixProject do
+defmodule Pento.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :pento2,
+      app: :pento,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule Pento2.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Pento2.Application, []},
+      mod: {Pento.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

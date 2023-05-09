@@ -1,5 +1,5 @@
-defmodule Pento2Web.WrongLive do
-  use Pento2Web, :live_view
+defmodule PentoWeb.WrongLive do
+  use PentoWeb, :live_view
 
 
   @range 1..6

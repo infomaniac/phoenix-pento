@@ -1,4 +1,4 @@
-defmodule Pento2.Application do
+defmodule Pento.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,22 +9,22 @@ defmodule Pento2.Application do
   def start(_type, _args) do
     children = [
       # Start the Telemetry supervisor
-      Pento2Web.Telemetry,
+      PentoWeb.Telemetry,
       # Start the Ecto repository
-      Pento2.Repo,
+      Pento.Repo,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Pento2.PubSub},
+      {Phoenix.PubSub, name: Pento.PubSub},
       # Start Finch
-      {Finch, name: Pento2.Finch},
+      {Finch, name: Pento.Finch},
       # Start the Endpoint (http/https)
-      Pento2Web.Endpoint
-      # Start a worker by calling: Pento2.Worker.start_link(arg)
-      # {Pento2.Worker, arg}
+      PentoWeb.Endpoint
+      # Start a worker by calling: Pento.Worker.start_link(arg)
+      # {Pento.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Pento2.Supervisor]
+    opts = [strategy: :one_for_one, name: Pento.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -32,7 +32,7 @@ defmodule Pento2.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    Pento2Web.Endpoint.config_change(changed, removed)
+    PentoWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end
