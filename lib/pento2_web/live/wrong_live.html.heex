@@ -1,0 +1,8 @@
+    <h1 class="text-2xl">Your score: <%= @score %></h1>
+    <h2 class="text-xl pb-2"><%= @message %></h2>
+    <h2 id="buttons">
+      <%= for n <- @range do %>
+        <button class="border shadow font-bold bg-slate-600 text-white w-14 h-14 p-1 rounded"
+            href="#" phx-click="guess" phx-value-number={ n }><%= n %></button>
+      <% end %>
+    </h2>
