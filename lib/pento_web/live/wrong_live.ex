@@ -12,7 +12,7 @@ defmodule PentoWeb.WrongLive do
     guess |> String.to_integer |> handle_guess(socket)
   end
 
-  def handle_guess( guess, socket )
+  defp handle_guess( guess, socket )
   when guess == socket.assigns.target do
     message = "Your guess: #{guess}. Correct. You win! Play again!"
     score = socket.assigns.score + ((@range |> Enum.count) / 2)
@@ -20,18 +20,18 @@ defmodule PentoWeb.WrongLive do
     {:noreply, assign(socket, score: score, message: message, time: time(), target: new_target() )}
   end
 
-  def handle_guess(guess, socket) do
+  defp handle_guess(guess, socket) do
     message = "Your guess: #{guess}. Wrong. Guess again."
     score = socket.assigns.score - 1
     {:noreply, assign(socket, score: score, message: message, time: time() )}
   end
 
-  def new_target() do
+  defp new_target() do
     Enum.random(@range)
   end
 
 
-  def time() do
+  defp time() do
     DateTime.utc_now() |> to_string
   end
 
